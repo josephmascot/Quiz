@@ -24,25 +24,42 @@
             </div>
 
             <div class="content-section-container text-centered bp-100 hero-section">
-                <form name="encryptionForm" onsubmit="return encrypt()">
-                     <input type="text" name="rawText">
+                <form name="encryptionForm" onsubmit=" encrypt(); return false">
+                    <input type="textArea" name="rawText">
                     <input type="submit" value="Encrypt">
                 </form>
+
+
                 <div class="hero-text">
                     <h1>Git<span class="header-bold"> from Beginner </span> to Guru</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra amet placerat mauris elementum
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra amet placerat mauris
+                        elementum
                         dignissim. </p>
                     <a class="btn btn-primary" href="contact-us.html">Contact Us</a>
                 </div>
             </div>
+            <h2 id="result"></h2>
         </div>
 
     </div>
 </body>
+
 <script>
     function encrypt() {
         let rawText = document.forms["encryptionForm"]["rawText"].value;
         //add encryption logic here
+
+        var result = '';
+        var charcode = 0;
+
+        for (var i = 0; i < rawText.length; i++) {
+            charcode = (rawText[i].charCodeAt()) + 2;
+            result += String.fromCharCode(charcode);
+        }
+        document.forms["encryptionForm"]["rawText"].value = result
+        document.getElementById('result').innerHTML = 'Encoded Value is: ' + result
+
     }
 </script>
+
 </html>
