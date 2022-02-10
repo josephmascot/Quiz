@@ -24,8 +24,10 @@
             </div>
 
             <div class="content-section-container text-centered bp-100 hero-section">
-                <img src="https://miro.medium.com/max/2732/0*0bGgvQVttKvcr3qd.png">
-
+                <form name="decryptionForm" onsubmit="return encrypt()">
+                    <input type="text" name="rawText">
+                    <input type="submit" value="Decrypt">
+                </form>
                 <div class="hero-text">
                     <h1>Git<span class="header-bold"> from Beginner </span> to Guru</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra amet placerat mauris elementum
@@ -37,5 +39,10 @@
         
     </div>
 </body>
-
+<script>
+    function decrypt() {
+        let rawText = document.forms["decryptionForm"]["rawText"].value;
+        //add encryption logic here
+    }
+</script>
 </html>
