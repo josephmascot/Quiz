@@ -16,7 +16,7 @@
 
         <div class="outer-container">
             <div class="top-bar">
-                <h3>Ency<span class="header-bold">pter</span></h3>
+                <h3>Deco<span class="header-bold">Dex</span></h3>
                 <ul class="top-menu">
                     <li> <a href="index.html"> Encrypt </a></li>
                     <li> <a href="decrypt.html">Decrypt</a> </li>
@@ -56,8 +56,7 @@
             charcode = (rawText[i].charCodeAt()) + 2;
             result += String.fromCharCode(charcode);
         }
-        document.forms["encryptionForm"]["rawText"].value = result
-        document.getElementById('result').innerHTML = 'Encoded Value is: ' + result
+        document.getElementById('result').innerHTML = 'Decoded Value is: ' + result
 
     }
 </script>

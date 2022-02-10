@@ -24,27 +24,38 @@
             </div>
 
             <div class="content-section-container text-centered bp-100 hero-section">
-                <form name="decryptionForm" onsubmit="return encrypt()">
-                    <input type="text" name="rawText">
+                <form name="decryptionForm" onsubmit="decrypt(); return false">
+                    <input type="textArea" name="rawText">
                     <input type="submit" value="Decrypt">
                 </form>
                 <div class="hero-text">
                     <h1><span class="header-bold"> Decrypter </span></h1>
-                    <p>The conversion of encrypted data into its original form is called Decryption. 
-                        It is generally a reverse process of encryption. It decodes the encrypted 
-                        information so that an authorized user can only decrypt the data because 
+                    <p>The conversion of encrypted data into its original form is called Decryption.
+                        It is generally a reverse process of encryption. It decodes the encrypted
+                        information so that an authorized user can only decrypt the data because
                         decryption requires a secret key or password.</p>
                     <a class="btn btn-primary" href="contact-us.html">Contact Us</a>
                 </div>
+
             </div>
+            <h3 id="result"></h3>
         </div>
-        
+
     </div>
 </body>
 <script>
     function decrypt() {
         let rawText = document.forms["decryptionForm"]["rawText"].value;
-        //add encryption logic here
+
+        var result = '';
+        var charcode = 0;
+
+        for (var i = 0; i < rawText.length; i++) {
+            charcode = (rawText[i].charCodeAt()) - 2;
+            result += String.fromCharCode(charcode);
+        }
+        document.getElementById('result').innerHTML = 'Encoded Value is: ' + result
     }
 </script>
+
 </html>
